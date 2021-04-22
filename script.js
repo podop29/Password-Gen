@@ -14,15 +14,19 @@ class Password{
     }
 }
 
-const password = new Password(10);
-console.log(password.pick())
-
 
 
 function genPass(){
+    let value = range.value;
+    let password = new Password(value);
     pass = password.pick()
+    document.getElementById("rangeValue").innerHTML = value;
     document.getElementById("passwordText").innerHTML = pass;
 }
 
+
+
+let range = document.getElementById("myRange");
+
 button = document.getElementById("genBtn")
-button.addEventListener("click", genPass);
+range.addEventListener("input", genPass);
