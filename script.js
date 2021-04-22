@@ -1,7 +1,7 @@
 class Password{
     constructor(length){
         this.length = length;
-        this.charset = "abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWQYZ!@#$%^&*"
+        this.charset = "abcdefghijklmnopqrstuvwqyzABCDEFGHIJKLMNOPQRSTUVWQYZ!@#$%&*1234567890"
     }
 
     pick(){
@@ -16,3 +16,13 @@ class Password{
 
 const password = new Password(10);
 console.log(password.pick())
+
+
+
+function genPass(){
+    pass = password.pick()
+    document.getElementById("passwordText").innerHTML = pass;
+}
+
+button = document.getElementById("genBtn")
+button.addEventListener("click", genPass);
